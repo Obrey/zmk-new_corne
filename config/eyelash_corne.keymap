@@ -50,21 +50,63 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        L_Lshift {
+            bindings = <&kp LSHFT>;
+            key-positions = <17 16>;
+        };
+
+        L_LCtrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <16 15>;
+        };
+
+        L_LAlt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <14 15>;
+        };
+
+        L_LGui {
+            bindings = <&kp LGUI>;
+            key-positions = <18 17>;
+        };
+
+        R_Shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <23 24>;
+        };
+
+        R_LCrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <24 25>;
+        };
+
+        R_LAlt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <26 25>;
+        };
+
+        R_Gui {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <22 23>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+&mt LC(A) LC(Z)  &kp SLASH  &kp W  &kp E       &kp R        &kp T                                  &kp UP                &kp Y        &kp U            &kp I      &kp O      &kp SEMICOLON  &trans
+&mt LC(C) LC(X)  &kp A      &kp S  &kp D       &kp F        &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J            &kp K      &kp L      &kp P          &trans
+&kp LC(V)        &kp Z      &kp X  &kp C       &kp V        &kp Q           &kp SPACE              &kp DOWN              &kp N        &kp M            &kp B      &kp COMMA  &kp PERIOD     &trans
+                                   &lt 10 ESC  &lt 8 SPACE  &lt 9 CAPSLOCK                                               &lt 6 ENTER  &lt 5 BACKSPACE  &lt 7 DEL
             >;
 
-             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-
-           
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
@@ -101,6 +143,69 @@
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        Num {
+            bindings = <
+&trans  &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT                     &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp APOS   &kp N4  &kp N5   &kp N6  &kp EQUAL            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH   &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp DOT  &kp N0  &trans                                       &trans  &trans  &trans
+            >;
+        };
+
+        Sym {
+            bindings = <
+&trans  &kp LEFT_BRACE     &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp DOUBLE_QUOTES  &kp DOLLAR       &kp PERCENT   &kp LCTRL              &kp PLUS                   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TILDE          &kp EXCLAMATION  &kp AT_SIGN   &kp HASH               &kp PIPE         &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                            &trans        &kp RIGHT_PARENTHESIS  &kp MINUS                                          &trans  &trans  &trans
+            >;
+        };
+
+        Fun {
+            bindings = <
+&trans  &kp F12  &kp F7  &kp F8      &kp F9     &kp PRINTSCREEN                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F11  &kp F4  &kp F5      &kp F6     &kp SCROLLLOCK             &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F10  &kp F1  &kp F2      &kp F3     &kp C_PAUSE      &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                         &kp C_MENU  &kp SPACE  &kp TAB                                            &trans  &trans  &trans
+            >;
+        };
+
+        Nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &kp LC(C)   &kp LC(V)    &kp UP         &kp LC(X)  &kp LC(Z)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp TAB     &kp LEFT     &kp DOWN       &kp RIGHT  &kp HOME   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &kp INSERT  &kp PAGE_UP  &kp PAGE_DOWN  &kp END    &kp RALT   &trans
+                        &trans  &trans  &trans                                    &trans      &trans       &trans
+            >;
+        };
+
+        Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &kp LC(C)         &kp LC(V)       &mmv MOVE_UP    &kp LC(X)        &kp LC(Z)        &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp C_AC_BACK     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &kp C_AC_FORWARD  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_LEFT   &msc SCRL_RIGHT  &trans
+                        &trans  &trans  &trans                                    &mkp RCLK         &mkp LCLK       &mkp MCLK
+            >;
+        };
+
+        Media {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &out OUT_USB  &out OUT_BLE  &out OUT_TOG     &bt BT_CLR    &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans        &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_MUTE    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &trans
+                        &trans  &trans  &trans                                    &trans  &trans        &trans
+            >;
         };
     };
 };
