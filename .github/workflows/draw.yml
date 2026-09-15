@@ -1,0 +1,29 @@
+name: Draw Keymap
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/**"
+      - ".github/workflows/draw.yml"
+      - "keymap_drawer.config.yaml"
+
+# Serialise diagram commits so simultaneous keymap saves cannot race.
+concurrency:
+  group: keymap-drawer-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/eyelash_corne.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      json_path: "config"
+      # Only draw the keymap. Firmware/module fetching belongs to the build job.
+      west_config_path: ""
+      commit_message: "[Draw] Update Eyelash Corne keymap"
+      destination: "both"
+      artifact_name: "eyelash_corne-keymap-drawing"
+      fail_on_error: true
