@@ -37,13 +37,13 @@ layers:
   - Q
   - $$mdi:keyboard-space$$
   - S
-  - N
-  - M
+  - {t: N, h: Nav}
+  - {t: M, h: Mouse}
   - B
   - {t: ',', s: <}
   - .
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:keyboard-esc$$', h: Media}
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:keyboard-space$$', h: Mouse}
   - {t: '$$mdi:apple-keyboard-caps$$', h: Nav}
   - {t: '$$mdi:keyboard-return$$', h: Sym}
@@ -233,7 +233,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - INS
+  - {t: INS, type: held}
   - PG UP
   - PG DN
   - END
@@ -241,7 +241,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -283,13 +283,13 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: 'Gui+]', s: 'Gui+}'}
-  - $$mdi:pan-up$$
+  - {t: '$$mdi:pan-up$$', type: held}
   - $$mdi:pan-down$$
   - $$mdi:pan-left$$
   - $$mdi:pan-right$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-right-click-outline$$
   - $$mdi:mouse-left-click-outline$$
@@ -337,7 +337,7 @@ layers:
   - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {h: '5', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -381,7 +381,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -430,7 +430,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -495,11 +495,11 @@ combos:
   k: {t: Mouse, h: toggle}
 - p: [18, 40]
   k: {t: Game, h: toggle}
-- p: [37, 38]
+- p: [23, 24]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
-- p: [8, 9]
+- p: [24, 25]
   k: {t: '$$mdi:backspace$$', type: backspace}
-- p: [17, 16]
-  k: $$mdi:keyboard-space$$
 - p: [15, 14]
+  k: $$mdi:keyboard-space$$
+- p: [16, 17]
   k: $$mdi:apple-keyboard-caps$$
